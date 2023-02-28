@@ -22,16 +22,16 @@ stops.pop(2)
 
 #7. Print the number of stops there are in the list
 total_no_stops = len(stops)
-# print(total_no_stops)
+print(total_no_stops)
 # prints 7
 
 #8. Sort the list alphabetically
 ordered_stops= sorted(stops)
-# print(ordered_stops)
+print(ordered_stops)
 
 #9. Reverse the positions of the stops in the list
 back_ordered_stops = sorted(stops, reverse = True)
 
 #10 Print out all the stops using a for loop
-# for total in stops:
-    # print(total)
+for total in stops:
+     print(total)
