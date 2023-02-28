@@ -13,8 +13,8 @@ stops.insert(4, "Polmont")
 
 
 #5. Remove "Livingston" from the list using its name
-stops.pop(5)
-    # not sure how to do with name
+stops.remove("Livingston")
+print(stops)
 
 #6. Delete "Cumbernauld" from the list by index
 stops.pop(2)
@@ -33,6 +33,5 @@ ordered_stops= sorted(stops)
 back_ordered_stops = sorted(stops, reverse = True)
 
 #10 Print out all the stops using a for loop
-
-for total in stops:
-    print(total)
+# for total in stops:
+    # print(total)
