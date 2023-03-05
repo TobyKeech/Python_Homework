@@ -158,10 +158,10 @@ class TestPetShop(unittest.TestCase):
 
     # @unittest.skip("delete this line to run the test")
     def test_customer_pet_count(self):
-        count = customer_pet_count(self.customers[0])
+        count = get_customer_pet_count(self.customers[0])
         self.assertEqual(0, count)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_add_pet_to_customer(self):
         customer = self.customers[0]
         add_pet_to_customer(customer, self.new_pet)
