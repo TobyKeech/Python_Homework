@@ -28,7 +28,8 @@ def add_string_as_number(number_1, number_2):
     return sum_of_strings
 
 def number_to_full_month_name(number):
-    calander = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    calander = ["January", "February", "March", "April", "May", "June", "July",
+                 "August", "September", "October", "November", "December"]
     calander_index = number - 1 
     return calander[calander_index]
 
