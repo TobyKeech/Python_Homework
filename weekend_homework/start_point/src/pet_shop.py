@@ -42,7 +42,7 @@ def find_pet_by_name(shop, name):
 
 #     for pet_name in shop["pets"]:
 #         if pet_name["name"] == name:  
-#             return ["pet"].remove(name)
+#             return ["pet"].remove(name)..
 
 def add_pet_to_stock(pet_shop, new_pet):
     pet_shop["pets"].append(new_pet)
@@ -60,6 +60,7 @@ def customer_pet_count(number_of_pets):
 
 def add_pet_to_customer(pet):
     pet["pets"].append(pet)
+    return len(get_customer_pet_count('pet'))
 
 def customer_can_afford_pet(customer_money, cost_pet):
     for item in customer_money:
