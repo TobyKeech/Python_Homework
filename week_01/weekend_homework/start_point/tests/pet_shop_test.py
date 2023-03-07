@@ -76,12 +76,15 @@ class TestPetShop(unittest.TestCase):
         }
 
     def test_pet_shop_name(self):
-        name = get_pet_shop_name(self.cc_pet_shop)
+        name = get_pet_shop_name(self.cc_pet_shop) 
+        # get_pet_shop_name (this is a one variable
         self.assertEqual("Camelot of Pets", name)
+        # getting a string ie "Camelot of Pets"
 
     # @unittest.skip("delete this line to run the test")
     def test_total_cash(self):
         sum = get_total_cash(self.cc_pet_shop)
+        # sum could be called anything
         self.assertEqual(1000, sum)
 
     # @unittest.skip("delete this line to run the test")
@@ -89,6 +92,7 @@ class TestPetShop(unittest.TestCase):
         add_or_remove_cash(self.cc_pet_shop,10)
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(1010, cash)
+        # does not need a return
 
     # @unittest.skip("delete this line to run the test")      
     # come back to this
@@ -96,6 +100,7 @@ class TestPetShop(unittest.TestCase):
         add_or_remove_cash(self.cc_pet_shop,-10)
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(990, cash)
+        # does not need a return
 
     # @unittest.skip("delete this line to run the test")
     def test_pets_sold(self):
@@ -105,6 +110,8 @@ class TestPetShop(unittest.TestCase):
     # @unittest.skip("delete this line to run the test")
     def test_increase_pets_sold(self):
         increase_pets_sold(self.cc_pet_shop,2)
+        # no return as no varibel assigned to function above
+        # you are testing
         sold = get_pets_sold(self.cc_pet_shop)
         self.assertEqual(2, sold)
 
@@ -127,6 +134,8 @@ class TestPetShop(unittest.TestCase):
     def test_find_pet_by_name__returns_pet(self):
         pet = find_pet_by_name(self.cc_pet_shop, "Arthur")
         self.assertEqual("Arthur", pet["name"])
+        # last line is what we want ie "Arthur", "where are is"
+
 
     # @unittest.skip("delete this line to run the test")
     def test_find_pet_by_name__returns_None(self):
