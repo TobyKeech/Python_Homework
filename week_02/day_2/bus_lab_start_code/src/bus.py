@@ -13,6 +13,11 @@ class Bus:
     
     def pick_up(self, new_person):
         self.passangers.append(new_person)
+    
+    def pick_up_from_stop(self,bus_stop):
+       
+        for person in bus_stop.queue:
+            self.pick_up(person)
 
     def drop_off(self, person):
         self.passangers.remove(person)
@@ -20,12 +25,4 @@ class Bus:
     def empty_bus(self):
         self.passangers.clear()
 
-    def pick_up_from_stop(self, bus_stop):
-        BusStop.add_to_queue()
-
-    
-
-        
-
-    
     
