@@ -14,3 +14,14 @@ class CoffeeShop:
     def sell_drink(self,customer,drink):
         customer.reduce_cash(drink.price)
         self.add_cash_to_till(drink.price)
+
+    def checks_age(self,customer):
+        if customer.age >= 16:
+            return True
+        else:
+            return False
+         
+            
+            
+
+
