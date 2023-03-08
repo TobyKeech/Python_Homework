@@ -1,10 +1,9 @@
 class CoffeeShop:
     
-    def __init__(self,name,till,price):
+    def __init__(self,name,till,drinks):
         self.name = name
         self.till = till
-        self.drinks = ["tea", "coffee", "latte"]
-        self.price = price
+        self.drinks = drinks
 
     def drinks_list(self):
         return len(self.drinks)
@@ -12,7 +11,6 @@ class CoffeeShop:
     def add_cash_to_till(self,amount):
          self.till += amount
          
-    def sell_drink_to_customer(self,customer, price):
-        self.coffeeshop.drinks
-        self.customer.wallet.reduce_cash(price)
-        self.add_cash_to_till
+    def sell_drink(self,customer,drink):
+        customer.reduce_cash(drink.price)
+        self.add_cash_to_till(drink.price)
