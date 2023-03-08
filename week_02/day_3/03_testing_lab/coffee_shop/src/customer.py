@@ -1,4 +1,5 @@
 class Customer:
-    def __init__(self,name,wallet):
-        self.name = name
-        self.wallet = wallet
+    pass
+    # def __init__(self,name,wallet):
+    #     self.name = name
+    #     self.wallet = wallet
