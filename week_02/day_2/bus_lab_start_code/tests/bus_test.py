@@ -52,5 +52,9 @@ class TestBus(unittest.TestCase):
         bus_stop = BusStop("Waverly Station")
         bus_stop.add_to_queue(person_1)
         bus_stop.add_to_queue(person_2)
+         # ^^arranging 
         self.bus.pick_up_from_stop(bus_stop)
+        # ^^act -method
         self.assertEqual(2, self.bus.passenger_count())
+        self.assertEqual(0, bus_stop.queue_length())
+        # ^^ assert

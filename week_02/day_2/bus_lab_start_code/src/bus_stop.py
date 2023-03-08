@@ -3,7 +3,6 @@ class BusStop():
         self.name = name
         self.queue = []
         
-
     def queue_length(self):
         return len(self.queue)
         

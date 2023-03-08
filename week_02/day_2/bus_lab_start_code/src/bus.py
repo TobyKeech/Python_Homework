@@ -18,6 +18,10 @@ class Bus:
        
         for person in bus_stop.queue:
             self.pick_up(person)
+        # another way of doing it using one line
+        # self.passangers.extend(bus_stop.queue)
+        bus_stop.clear_queue()
+        
 
     def drop_off(self, person):
         self.passangers.remove(person)
