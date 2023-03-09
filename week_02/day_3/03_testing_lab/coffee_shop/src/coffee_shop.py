@@ -16,12 +16,10 @@ class CoffeeShop:
         self.add_cash_to_till(drink.price)
 
     def checks_age(self,customer):
-        if customer.age >= 16:
-            return True
-        else:
-            return False
+        return customer.age >= 16
          
-            
+    def check_energy_level(self,customer):
+        return customer.energy_level <= 50       
             
 
 
