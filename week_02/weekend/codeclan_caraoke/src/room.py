@@ -25,7 +25,17 @@ class Room:
     def add_song_to_list(self,song):
         self._song_list.append(song)
 
-    def customer_can_afford_entry(self, fee):
-        pass
-    
+    def customer_can_afford_entry(self, fee, wallet):
+        if fee <= wallet:
+            return True
+        else:
+            return False
+        
+
+    def check_favourtie_song(self, fav_song, song_list):
+        if fav_song in song_list:
+            return "Whoo"
+        else:
+            None
+
         
