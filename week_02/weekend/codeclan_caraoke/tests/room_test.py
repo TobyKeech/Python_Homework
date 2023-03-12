@@ -10,8 +10,8 @@ class TestRoom(unittest.TestCase):
         self.guest_3 = Guest("Bob", 22, 15.00)
         self.guests_in_room = [self.guest_1, self.guest_2]
 
-        self.room_1 = Room(1,"hip hop", 12)
-        self.room_2 = Room(2, "rock", 2)
+        self.room_1 = Room(1,"hip hop", 12, 10)
+        self.room_2 = Room(2, "rock", 2, 5)
 
         self.song_1 = Song("Sweet Caroline", "Neil Diamond", 4.39)
         self.song_2 = Song("500 miles", "Pro Claimers", 3.85)
@@ -29,6 +29,9 @@ class TestRoom(unittest.TestCase):
 
     def test_max_capacity_in_room(self):
         self.assertEqual(12, self.room_1.max_capacity)
+    
+    def test_room_has_entry_fee(self):
+        self.assertEqual(10, self.room_1.entry_fee)
 
     def test_check_in_guest(self):
         self.room_1.check_in_guest(self.guest_3)
@@ -56,5 +59,13 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_song_to_list(self.song_3)
         self.room_1.add_song_to_list(self.song_2)
         self.assertEqual(2, self.room_1.song_count())
+
+    def test_customer_can_afford_entry(self):
+        self.room_1 = Room(1,"hip hop", 12, 10)
+        self.guest_1 = Guest("Toby", 26, 75.00)
+
+        self.room_1.customer_can_afford_entry(self.guest_1.wallet)
+        self.guest_1.reduce_wallet(self.room_1.entry_fee)
+        self.assertCountEqual(65.00, self.guest_1.wallet)
 
 
