@@ -10,7 +10,10 @@ class Room:
         return len(self.guests_in_room)
                               
     def check_in_guest(self, guest):
-        self.guests_in_room.append(guest) 
+        if len(self.guests_in_room) < self.max_capacity:
+            self.guests_in_room.append(guest)
+        else:
+            return "no space"
 
     def check_out_guest(self,guest):
         self.guests_in_room.remove(guest)
@@ -21,5 +24,5 @@ class Room:
     def add_song_to_list(self,song):
         self._song_list.append(song)
 
-    # def add_to_capacity(self,amount):
-    #     self.max_capacity =+ amount
+    
+        
