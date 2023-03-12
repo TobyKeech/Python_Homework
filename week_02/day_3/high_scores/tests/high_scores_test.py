@@ -29,9 +29,10 @@ class HighScoresTest(unittest.TestCase):
 
     # Test top three when there is a tie
 
-    def 
+    def test_top_three_when_there_is_a_tie(self):
+        self.assertEqual([5,4,3], top_three_in_tie[1,2,3,4,4,5])
 
     # Test top three when there are less than three
 
     # Test top three when there is only one
-    
+

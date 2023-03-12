@@ -14,7 +14,7 @@ class Room:
         if len(self.guests_in_room) < self.max_capacity:
             self.guests_in_room.append(guest)
         else:
-            return "no space"
+            return None
 
     def check_out_guest(self,guest):
         self.guests_in_room.remove(guest)
@@ -36,6 +36,6 @@ class Room:
         if fav_song in song_list:
             return "Whoo"
         else:
-            None
+           return None
 
         
