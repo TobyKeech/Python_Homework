@@ -30,7 +30,6 @@ class Room:
             return True
         else:
             return False
-        
 
     def check_favourtie_song(self, fav_song, song_list):
         if fav_song in song_list:
