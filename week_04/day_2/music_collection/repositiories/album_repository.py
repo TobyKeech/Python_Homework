@@ -15,8 +15,7 @@ def select_all():
                      row['genre'], 
                      artist, 
                      row ['id']
-                     )
-        # append to the list
+        )
         albums.append(new_album)
 
     return albums
@@ -35,10 +34,10 @@ def delete(id):
 # # save(task)
 def save(album):
     sql = "INSERT INTO albums (title, genre, artist_id)\
-            VALUES (%s,%s,%s) RETURNING *"
+        VALUES (%s,%s,%s) RETURNING *"
     values = [album.title, album.genre, album.artist.id]
     results = run_sql(sql, values)
-    id = results[0] ['id']
+    id = results[0]['id']
     album.id = id
     return album
 
@@ -69,7 +68,7 @@ def update(album):
     run_sql(sql,values)
 
 
-def tasks_for_user(artist):
+def albums_for_artist(artist):
     sql = "SELECT * FROM tasks WHERE artist_id = %s"
     values = [artist.id]
     results = run_sql(sql,values)

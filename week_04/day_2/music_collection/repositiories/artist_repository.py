@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.artist import Artist
 
 def save(artist):
-    sql = "INSERT INTO artist () VALUES (%s) RETURNING *"
+    sql = "INSERT INTO artists (name) VALUES (%s) RETURNING *"
     values = [artist.name]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -24,13 +24,11 @@ def select_all():
 
 def select(id):
     artist = None
-    sql = "SELECT * FROM artist WHERE id = %s"
+    sql = "SELECT * FROM artists WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
 
-     # checking if the list returned by `run_sql(sql, values)` is empty. Empty lists are 'fasly' 
-    # Could alternativly have..
-    # if len(results) > 0 
+    
     if results:
         result = results[0]
         artist = Artist(result['name'], result['id'] )
