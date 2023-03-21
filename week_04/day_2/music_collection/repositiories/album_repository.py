@@ -44,48 +44,45 @@ def save(album):
 
 # # select(id)
 def select(id):
-    task = None
+    album = None
     sql = "SELECT * FROM albums WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
 
-#     if len(results) > 0:
-#         selected_task = results[0]
-#         user = user_repository.select ( selected_task ['user_id'] )
-#         task = Task(selected_task['description'],
-#                     user,
-#                     selected_task['duration'],
-#                     selected_task['completed'],
-#                     selected_task['id']
-#                     )
-#     return task
+    if len(results) > 0:
+        selected_album = results[0]
+        artist = artist_repository.select ( selected_album ['artist_id'] )
+        album = Album(selected_album['title'],
+                    selected_album['genre'],
+                    artist, 
+                    selected_album['id']
+                    )
+    return album
 
 # # update(task)
-# def update(task):
-#     sql = """UPDATE tasks 
-#             SET (description, user_id, duration, completed) 
-#             = (%s,%s,%s,%s) 
-#             WHERE id = %s """
-#     values = [task.description, task.user.id, task.duration, task.completed,
-#                task.id]
-#     run_sql(sql,values)
+def update(album):
+    sql = """UPDATE tasks 
+            SET (title, genre, artist_id) 
+            = (%s,%s,%s) 
+            WHERE id = %s """
+    values = [album.title, album.genre, album.artist.id, album.id]
+    run_sql(sql,values)
 
 
-# def tasks_for_user(user):
-#     sql = "SELECT * FROM tasks WHERE user_id = %s"
-#     values = [user.id]
-#     results = run_sql(sql,values)
+def tasks_for_user(artist):
+    sql = "SELECT * FROM tasks WHERE artist_id = %s"
+    values = [artist.id]
+    results = run_sql(sql,values)
 
-#     user_tasks = []
-#     for row in results:
-#         task = Task(
-#                     row['description'],
-#                      user, 
-#                      row['duration'], 
-#                      row['completed'], 
-#                      row['id']
-#                     )
+    artist_albums = []
+    for row in results:
+        album = Album(
+                    row['title'],
+                     row['genre'], 
+                     artist, 
+                     row['id']
+                    )
         
-#         user_tasks.append(task)
+        artist_albums.append(album)
 
-#     return user_tasks
+    return artist_albums
