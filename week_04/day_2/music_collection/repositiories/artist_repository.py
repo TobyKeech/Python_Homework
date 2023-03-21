@@ -12,13 +12,11 @@ def save(artist):
 
 def select_all():
     artists = []
-
     sql = "SELECT * FROM artists"
     results = run_sql(sql)
-
     for row in results:
         artist = Artist(row['name'], row['id'] )
-        artist.append(artist)
+        artists.append(artist)
     return artists
 
 
@@ -32,7 +30,7 @@ def select(id):
     if results:
         result = results[0]
         artist = Artist(result['name'], result['id'] )
-    return artist
+    return artist 
 
 
 def delete_all():

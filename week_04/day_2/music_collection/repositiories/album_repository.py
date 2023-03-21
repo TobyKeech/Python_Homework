@@ -10,14 +10,12 @@ def select_all():
 
     for row in results:
         artist = artist_repository.select ( row ['artist_id'])
-        # create a new Task object
         new_album = Album(row['title'],
                      row['genre'], 
                      artist, 
                      row ['id']
         )
         albums.append(new_album)
-
     return albums
 
 # delete_all
@@ -58,9 +56,8 @@ def select(id):
                     )
     return album
 
-# # update(task)
 def update(album):
-    sql = """UPDATE tasks 
+    sql = """UPDATE albums 
             SET (title, genre, artist_id) 
             = (%s,%s,%s) 
             WHERE id = %s """
@@ -69,7 +66,7 @@ def update(album):
 
 
 def albums_for_artist(artist):
-    sql = "SELECT * FROM tasks WHERE artist_id = %s"
+    sql = "SELECT * FROM albums WHERE artist_id = %s"
     values = [artist.id]
     results = run_sql(sql,values)
 
