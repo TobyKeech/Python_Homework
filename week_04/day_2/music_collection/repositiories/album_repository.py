@@ -4,19 +4,26 @@ import repositiories.artist_repository as artist_repository
 
 
 def select_all():
+    # set up an empty lsit to return
     albums = []
     sql = "SELECT * FROM albums"
+    # this is what is going on in sql (postico)
     results = run_sql(sql)
+    # this is what makes sql work in python using the run_sql function
 
     for row in results:
+        # we will now create a new ablbum object
         artist = artist_repository.select ( row ['artist_id'])
+        # above is defining what artist is above by getting the Artist object
         new_album = Album(row['title'],
                      row['genre'], 
                      artist, 
                      row ['id']
         )
         albums.append(new_album)
+        # this is adding the the albums list with the newly created new_album object
     return albums
+# this is returing the list albums (stated above)
 
 # delete_all
 def delete_all():

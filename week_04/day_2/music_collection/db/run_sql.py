@@ -4,6 +4,7 @@ import psycopg2.extras as ext
 def run_sql(sql,values=None):
     conn = None
     results = []
+    
     try: 
         conn = psycopg2.connect("dbname='music_collection'")
         cur = conn.cursor(cursor_factory=ext.DictCursor)
