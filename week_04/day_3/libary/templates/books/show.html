@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <p>Description : {{solo_book.description}}</p>
+    <hr  />
+
+    <p>Author : {{solo_book.author.name}} {{solo_book.author.name}} </p>
+
+    <p>Genre : {{solo_book.genre}} </p>
+    <hr>
+
+    <p><a href="/books/{{solo_book.id}}/edit"> Edit </a> </p>
+    <p>
+        <hr>
+    <form class="delete-form" action="/books/{{solo_book.id}}/delete" method="POST">
+        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+      </form>
+    </p>
+</div>
+
+    
+{% endblock%}
