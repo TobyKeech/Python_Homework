@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %}
+{% for movie in movie_list %}
+
+ <p> <b>  <a href= "/movies/{{loop.index0}}"> {{movie.title}} </a> </b> </p> 
+
+ <p> <b> Year Released </b> : {{ movie.year_release }} </p>
+
+ {% endfor %}
+
+{% endblock %}
