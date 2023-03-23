@@ -3,7 +3,7 @@
     <h1>Books</h1>
     {% for book in all_books %}
     <div>
-        <p> <a href = '/books/{{book.id}}'>{{book.title}}</a> </p>
+        <p> <a href ='/books/{{book.id}}'>{{book.title}}</a> </p>
         <p> Genre is {{book.genre}} </p>
         <p> Author is {{book.author.name}}</p>
     </div>

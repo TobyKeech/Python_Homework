@@ -32,7 +32,7 @@ def select(id):
 
     if len(results) > 0:
         selected_book = results[0]
-        author = author_repository.select ( selected_book ['artist_id'] )
+        author = author_repository.select ( selected_book ['author_id'] )
         book = Book(selected_book['title'],
                     selected_book['genre'],
                     author, 
