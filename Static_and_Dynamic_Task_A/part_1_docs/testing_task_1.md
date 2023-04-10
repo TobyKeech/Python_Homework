@@ -25,7 +25,6 @@ class CardGame:
 
     # a == must be used to decern equals too not a single = 
     # after else a colon is needed
-    # card.value is not defined should be card
    
 
   dif highest_card(self, card1 card2):
